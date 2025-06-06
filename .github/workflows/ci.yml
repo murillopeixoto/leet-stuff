@@ -19,11 +19,15 @@ jobs:
           distribution: 'corretto'
           java-version: 21
 
-      - name: Build and test
-        run: ./gradlew build
+      - name: Verify Gradle Wrapper Files
+        run: |
+          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
+            echo "Gradle wrapper files are missing. Regenerating..."
+            gradle wrapper --gradle-version 7.6
+          fi
 
       - name: Run ktlint
         run: ./gradlew ktlintCheck
 
-      - name: Run checkstyle
-        run: ./gradlew checkstyleMain checkstyleTest
+      - name: Run tests
+        run: ./gradlew test

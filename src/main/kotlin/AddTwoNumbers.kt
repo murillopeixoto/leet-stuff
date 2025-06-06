@@ -7,7 +7,10 @@ package org.example
  * Adds two numbers represented by linked lists and returns the sum as a linked list.
  *
  */
-fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
+fun addTwoNumbers(
+    l1: ListNode?,
+    l2: ListNode?,
+): ListNode? {
     if (l1 == null || l2 == null) {
         return null
     }
@@ -35,7 +38,10 @@ fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
     return listOfNodes[0]
 }
 
-fun addTwoNumbersB(l1: ListNode?, l2: ListNode?): ListNode? {
+fun addTwoNumbersB(
+    l1: ListNode?,
+    l2: ListNode?,
+): ListNode? {
     if (l1 == null || l2 == null) {
         return null
     }
@@ -63,15 +69,4 @@ fun addTwoNumbersB(l1: ListNode?, l2: ListNode?): ListNode? {
         newNode.next = currentNode
     }
     return newNode
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-    fun print(): String {
-        if (next != null) {
-            return "$`val` -> ${next?.print()}"
-        } else {
-            return "$`val`"
-        }
-    }
 }
