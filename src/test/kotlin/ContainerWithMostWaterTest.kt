@@ -1,7 +1,7 @@
 import org.example.ContainerWithMostWater.maxArea
 import org.example.ContainerWithMostWater.maxAreaBrute
-import org.junit.jupiter.api.Assertions.assertEquals
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class ContainerWithMostWaterTest {
     @Test
