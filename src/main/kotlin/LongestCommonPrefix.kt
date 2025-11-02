@@ -8,14 +8,14 @@ package org.example
  */
 fun longestCommonPrefix(strs: Array<String>): String {
     val prefix = StringBuilder()
-    var minLenghtIndex = 0
+    var minLengthIndex = 0
     for (i in strs.indices) {
-        if (strs[i].length < strs[minLenghtIndex].length) {
-            minLenghtIndex = i
+        if (strs[i].length < strs[minLengthIndex].length) {
+            minLengthIndex = i
         }
     }
-    loop@for (i in strs[minLenghtIndex].indices) {
-        val currentChar = strs[minLenghtIndex][i]
+    loop@for (i in strs[minLengthIndex].indices) {
+        val currentChar = strs[minLengthIndex][i]
         for (j in strs.indices) {
             if (strs[j][i] != currentChar) {
                 break@loop
